@@ -1,0 +1,17 @@
+[21-Jul-2020 08:35:00 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'qvhklqzo_mvc.logIn' doesn't exist in /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelIsAuth.php:17
+Stack trace:
+#0 /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelIsAuth.php(17): PDOStatement->execute()
+#1 /home/qvhklqzo/mvc.vinash.netxi.in/controllers/ControllerIsAuth.php(19): ModelIsAuth->checkLog('undefined', 'undefined', '1')
+#2 /home/qvhklqzo/mvc.vinash.netxi.in/components/Router.php(33): ControllerIsAuth->IsAuth(Array)
+#3 /home/qvhklqzo/mvc.vinash.netxi.in/index.php(10): Router->start()
+#4 {main}
+  thrown in /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelIsAuth.php on line 17
+[21-Jul-2020 08:45:36 UTC] PHP Notice:  Undefined index: upd in /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelLogin.php on line 69
+[21-Jul-2020 08:53:01 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'qvhklqzo_mvc.logIn' doesn't exist in /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelIsAuth.php:17
+Stack trace:
+#0 /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelIsAuth.php(17): PDOStatement->execute()
+#1 /home/qvhklqzo/mvc.vinash.netxi.in/controllers/ControllerIsAuth.php(20): ModelIsAuth->checkLog('1', '$2y$10$vIeFxrlt...', 'adm')
+#2 /home/qvhklqzo/mvc.vinash.netxi.in/components/Router.php(33): ControllerIsAuth->IsAuth(Array)
+#3 /home/qvhklqzo/mvc.vinash.netxi.in/index.php(10): Router->start()
+#4 {main}
+  thrown in /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelIsAuth.php on line 17
