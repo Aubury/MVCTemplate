@@ -63,9 +63,17 @@ class ModelLogin
             $strInsert = "INSERT INTO `login`(`table`, `name`, `admin_id`, `uPd`)
                                  VALUES ('{$tab}','{$user['name']}', '{$user['id']}', '${uPd}')";
             $this->db->con->exec($strInsert);
+
+            $logIn = $this->db->con->prepare("SELECT * FROM `login` WHERE `admin_id` = '{$user['id']}'");
+            $logIn->execute();
+            $arrIn = $logIn->fetchAll();
+
+            file_put_contents(ROOT . '/views/ViewAdminPage/logInfo.json', $arrIn);
             return [$tab, $user['name'], $user['id'], $uPd];
 
         }else{
+
+            file_put_contents(ROOT . '/views/ViewAdminPage/logInfo.json', $arr);
             return [$arr[0]['table'], $arr[0]['name'], $arr[0]['id'], $arr[0]['uPd']];
 
         }

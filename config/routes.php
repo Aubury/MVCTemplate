@@ -2,10 +2,12 @@
 
 return[
 
-    "show/Admin"    => "AdminPage/ShowAdminPage/adm",
+    "show/Admin" => "AdminPage/ShowAdminPage/adm",
 
-    "login"         => "Login/ShowLogIn/none",
-    "LogIn"         => "Login/LogIn/none",
-    "exit"          => "Login/Exit/none"
+    "json"       => "AdminPage/JSON/adm",
+
+    "login"      => "Login/ShowLogIn/none",
+    "LogIn"      => "Login/LogIn/none",
+    "exit"       => "Login/Exit/none"
 
 ];

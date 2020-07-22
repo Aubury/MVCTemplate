@@ -23,6 +23,7 @@
 
 </footer>
 <script><?php include_once ROOT . "/views/app/main.js"?></script>
+<script><?php include_once ROOT . "/views/ViewAdminPage/app/script.js"?></script>
 
 </body>
 </html>
