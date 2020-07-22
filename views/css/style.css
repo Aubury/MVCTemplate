@@ -17,6 +17,7 @@ footer {
 }
 .container{
     max-width: 1400px;
+    width: 90%;
 }
 .d-row{
     display: flex;
@@ -32,11 +33,21 @@ footer {
 .align-items-center{
     align-items: center;
 }
+.align-items-right{
+    align-items: flex-end;
+}
+.align-self-right{
+    align-self: flex-end;
+}
 .center{
     text-align: center;
 }
 h1{
     font-size: 3em;
+}
+#exit{
+    width: auto;
+    padding: 5px 30px;
 }
 
 

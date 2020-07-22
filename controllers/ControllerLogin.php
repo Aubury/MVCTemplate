@@ -26,14 +26,14 @@ class ControllerLogin
         ];
         $this->m->getIn($obj);
     }
-//    public function actionExit()
-//    {
-//        $obj = [
-//            'id'    => $_POST['id'],
-//            'table' => $_POST['table']
-//        ];
-//
-//        $this->m->ExitSite($obj);
-//    }
+    public function actionExit()
+    {
+        $obj = [
+            'id'    => $_POST['id'],
+            'table' => $_POST['table']
+        ];
+
+        $this->m->ExitSite($obj);
+    }
 
 }

@@ -31,7 +31,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OPENCARD" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -69,7 +69,8 @@
       <workItem from="1595159941423" duration="10300000" />
       <workItem from="1595260154761" duration="11519000" />
       <workItem from="1595320508261" duration="12787000" />
-      <workItem from="1595419813345" duration="6153000" />
+      <workItem from="1595419813345" duration="19203000" />
+      <workItem from="1595442445117" duration="657000" />
     </task>
     <servers />
   </component>
@@ -77,6 +78,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="218" key="FileChooserDialogImpl" timestamp="1595448262154">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="218" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595448262154" />
     <state x="653" y="294" key="NewPhpClassDialog" timestamp="1595099583017">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

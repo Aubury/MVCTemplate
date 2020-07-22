@@ -1,3 +1,0 @@
-[21-Jul-2020 10:17:32 UTC] PHP Warning:  include(/home/qvhklqzo/mvc.vinash.netxi.in/views/ViewAdminPage/logInfo.json): failed to open stream: No such file or directory in /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelLogin.php on line 78
-[21-Jul-2020 10:17:32 UTC] PHP Warning:  include(): Failed opening '/home/qvhklqzo/mvc.vinash.netxi.in/views/ViewAdminPage/logInfo.json' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelLogin.php on line 78
-[21-Jul-2020 10:17:32 UTC] PHP Warning:  file_put_contents(): Filename cannot be empty in /home/qvhklqzo/mvc.vinash.netxi.in/models/ModelLogin.php on line 78
