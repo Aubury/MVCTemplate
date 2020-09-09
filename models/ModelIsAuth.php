@@ -30,7 +30,7 @@ class ModelIsAuth
     //---------------------------------------------------------------------------------------------------------------------------------
     private  function lastVisit($obj)
     {
-        $prep = $this->db->con->prepare("UPDATE `admin` SET `last_visit`= NOW() WHERE `id` = '${obj}'");
+        $prep = $this->db->con->prepare("UPDATE `admins` SET `last_visit`= NOW() WHERE `id` = '${obj}'");
         $prep->execute();
     }
 

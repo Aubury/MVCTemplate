@@ -25,7 +25,7 @@
         <h1 class="center">Login</h1>
         <div class="card-body">
             <form name="LogIn" action="#" class="formLogIn" method="">
-                <p><input type="text" class="inpText form-control"  name="login" placeholder="Login" required>
+                <p><input type="text" class="inpText form-control"  name="email" placeholder="Email" required>
                 <p><input type="password" class="inpText form-control"  name="password" placeholder="Password" required>
                 <p class="col-12 col-xl-12"> <button class="btn btn-block btn-success" type="submit">Log In</button></p>
             </form>

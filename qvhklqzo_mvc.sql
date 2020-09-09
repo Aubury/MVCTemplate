@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Июл 22 2020 г., 20:42
--- Версия сервера: 5.7.30-cll-lve
+-- Время создания: Сен 09 2020 г., 16:34
+-- Версия сервера: 5.7.31-cll-lve
 -- Версия PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,12 +25,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `admin`
+-- Структура таблицы `admins`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `admins` (
   `id` int(10) NOT NULL,
   `name` varchar(100) NOT NULL,
+  `patronymic` varchar(100) NOT NULL,
+  `surname` varchar(11) NOT NULL,
   `login` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
@@ -39,11 +41,11 @@ CREATE TABLE `admin` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `admin`
+-- Дамп данных таблицы `admins`
 --
 
-INSERT INTO `admin` (`id`, `name`, `login`, `email`, `password`, `last_visit`, `last_out`) VALUES
-(1, 'Admin', 'Admin', 'aubury@ukr.net', 'admin', '2020-07-22 17:39:32', '2020-07-22 17:18:58');
+INSERT INTO `admins` (`id`, `name`, `patronymic`, `surname`, `login`, `email`, `password`, `last_visit`, `last_out`) VALUES
+(1, 'Иван', 'Иванович', 'Иванов', 'Admin', 'aubury@ukr.net', '$2y$10$UnQ7TN17hy..ThqOS1ysHu692c76HELdr8mounYXp1R2hdzUqqWYG', '2020-09-09 13:24:19', '2020-09-09 13:24:19');
 
 -- --------------------------------------------------------
 
@@ -65,16 +67,16 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `table`, `name`, `admin_id`, `uPd`, `log_time`) VALUES
-(1, 'adm', 'Admin', 1, '$2y$10$vIeFxrltpuBDM7/UggN8WO8vdf6wWF9M9ncpWmb2QJMfrGzpovvli', '2020-07-22 17:39:31');
+(1, 'adm', 'Иван', 1, '$2y$10$vZOBrWixaun6aphdLGd1le7668vFOX/QxaMizOTMeGcO53gzR2EQK', '2020-09-09 13:24:12');
 
 --
 -- Индексы сохранённых таблиц
 --
 
 --
--- Индексы таблицы `admin`
+-- Индексы таблицы `admins`
 --
-ALTER TABLE `admin`
+ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -88,9 +90,9 @@ ALTER TABLE `login`
 --
 
 --
--- AUTO_INCREMENT для таблицы `admin`
+-- AUTO_INCREMENT для таблицы `admins`
 --
-ALTER TABLE `admin`
+ALTER TABLE `admins`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --

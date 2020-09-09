@@ -20,4 +20,19 @@ class ControllerAdminPage
     public  function  actionJSON(){
         $this->m->JSON_File();
     }
+    public function actionAddAdmin()
+    {
+        $obj =(array)json_decode($_GET['value']);
+        $this->m->addAdmin($obj);
+    }
+
+    public function actionDeleteAdmin()
+    {
+
+        $this->m->DeleteAdmin($_POST['email']);
+    }
+    public function actionTotalInfoAdmins()
+    {
+        $this->m->TotalInf();
+    }
 }

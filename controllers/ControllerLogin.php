@@ -21,7 +21,7 @@ class ControllerLogin
     public function actionLogIn()
     {
         $obj = [
-            'login'   => $_POST['login'],
+            'email'   => $_POST['email'],
             'password'=> $_POST['password']
         ];
         $this->m->getIn($obj);

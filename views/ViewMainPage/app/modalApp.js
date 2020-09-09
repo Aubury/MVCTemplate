@@ -51,12 +51,14 @@ function sendObj(answ) {
     })
         .then(e => e.json())
          .then(data => {
-             if(data.length == 2){
+             if(data.length === 3){
                  //set cookie with data[1]
                  setCookie('user_id', data[1][1], 1);
                  setCookie('uPd', data[1][0], 1);
                  setCookie('table', data[1][2], 1);
+                 localStorage.setItem('user',`${data[2][1]}\r${data[2][2]}\r${data[2][3]}`);
                  window.location.href = `http://${data[0]}`;
+                 
              }else {
 
                  obj.form.nextElementSibling.innerHTML = data;

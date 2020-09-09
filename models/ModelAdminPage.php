@@ -15,5 +15,93 @@ class ModelAdminPage
         $current = file_get_contents(ROOT . '/views/ViewAdminPage/logInfo.json');
         echo json_encode($current);
     }
+    public function addAdmin($arr)
+    {
+        $prp = $this->db->con->prepare("SELECT * FROM `admins` WHERE `email`='{$arr['email']}'");
+        $prp->execute();
+        $adm = $prp->fetchAll();
+
+        if(count($adm) > 0){
+            $arr['password'] = substr(hash('sha256', $arr['email'] . time()), rand(0, 40), 10);
+            $passH = password_hash($arr['password'], PASSWORD_BCRYPT);
+
+            $upAdm = $this->db->con->prepare("UPDATE `admins` SET `name`='{$arr['name']}' ,`patronymic`='{$arr['patronymic']}' ,`surname`='{$arr['surname']}' ,`email`='{$arr['email']}', `password`='{$passH}'
+                                                      WHERE `email`='{$adm[0]['email']}'");
+            $upAdm->execute();
+            $regD = [
+                'email' => $arr['email'],
+                'password' => $arr['password']
+            ];
+
+            echo "Изменения внесены";
+            $this->sendRegistrationInfo($regD);
+
+        }else {
+
+            $arr['password'] = substr(hash('sha256', $arr['email'] . time()), rand(0, 40), 10);
+            $passH = password_hash($arr['password'], PASSWORD_BCRYPT);
+
+            $sqlStr = "INSERT INTO `admins`(`name`, `patronymic`, `surname`, `email`, `password`)
+                   VALUES ('{$arr['name']}','{$arr['patronymic']}', '{$arr['surname']}','{$arr['email']}','{$passH}')";
+
+            $regD = [
+                'email' => $arr['email'],
+                'password' => $arr['password']
+            ];
+
+            $this->db->con->exec($sqlStr);
+
+
+            echo "Админ добавлен";
+            $this->sendRegistrationInfo($regD);
+        }
+    }
+
+    public function DeleteAdmin($admin)
+    {
+        $sql = $this->db->con->prepare("SELECT * FROM `admins` WHERE `email` = '{$admin}'");
+        $sql->execute();
+        $bdAdm = $sql->fetchAll();
+
+        if(count($bdAdm)>0){
+            $prp = $this->db->con->prepare("DELETE FROM `admins` WHERE `email` = '{$admin}'");
+            $prp->execute();
+
+            echo "Админ: {$bdAdm[0]['surname']} {$bdAdm[0]['name']} {$bdAdm[0]['patronymic']} удален из базы данных";
+        }else{
+
+            echo "Админа с Email- {$admin} нет в базе";
+        }
+    }
+    private function sendRegistrationInfo($user)
+    {
+        $msg     = "<h3>Вас успешно зарегистрировали на сайте как администратора " . SITE . "</h3> Для авторизации используйте логин: ${user['email']} пароль: ${user['password']}";
+        $to      = $user['email'];
+        $subject = "Регистрация на сервере " . SITE;
+        $headers = "MIME-Version: 1.0\r\nContent-type: text/html; charset=utf-8\r\nFrom: aubury@vinash.netxi.in\r\n";
+        mail($to, $subject, $msg, $headers);
+    }
+    public function TotalInf()
+    {
+        $prp = $this->db->con->prepare("SELECT * FROM `admins`");
+        $prp->execute();
+        $arr = $prp->fetchAll();
+
+        $admins = [];
+        foreach ($arr as $value){
+            array_push($admins,[
+
+                'name'       => $value['name'],
+                'patronymic' => $value['patronymic'],
+                'surname'    => $value['surname'],
+                'email'      => $value['email'],
+                'last_visit' => $value['last_visit']
+            ]);
+        }
+
+        echo json_encode($admins);
+
+    }
+
 
 }

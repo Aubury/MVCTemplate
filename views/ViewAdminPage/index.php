@@ -7,6 +7,8 @@
     <style><?php include_once ROOT . "/views/css/reset.css"?></style>
     <style><?php include_once ROOT . "/views/css/style.css"?></style>
     <style><?php include_once ROOT . "/views/css/forms.css"?></style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -28,7 +30,28 @@
 </header>
 <main class="d-col justify-content-center align-items-center">
     <h1>MVC Admin Page</h1>
+<!------------------------------------------------>
+    <div class="container row justify-content-around">
+        <div class="col-3 ReportInfo">
+            <div class="card border-info  mb-3">
+                <div class="card-header"><h3>Добавление или редактировать администратора</h3></div>
+                <div class="card-body">
+                    <form name="formAddAdmins" action="#" method="get">
+                        <p><input type="text" class="form-control"  name="name" placeholder="Имя">
+                        <p><input type="text" class="form-control"  name="patronymic" placeholder="Отчество">
+                        <p><input type="text"  class="form-control" name="surname" placeholder="Фамилия">
+                        <p><input type="email" class="form-control" name="email" placeholder="Email">
+                        <p class="col-12 col-xl-12"> <button class="btn btn-block btn-success" type="submit">Добавить / Редактировать</button></p>
+                    </form>
+                    <span class="italic"></span>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-9 border-warning">
+            <table class="tableAdmins table table-hover"></table>
+        </div>
+    </div>
 </main>
 <footer>
 
